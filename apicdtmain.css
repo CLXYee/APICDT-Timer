@@ -1,0 +1,164 @@
+/* 通用样式 */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+/*--------------------------------------------------------------------*/
+/*输入资料页面*/
+/* 页面容器 */
+.info-page-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题样式 */
+.info-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* 队伍信息区域 */
+.team-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.team-section {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 小标题样式 */
+.team-section h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* 输入框和标签样式 */
+.team-section label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.team-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.team-section input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* 按钮样式 */
+.start-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+}
+/*--------------------------------------------------------------------*/
+
+/*-------------------------Match Info------------------------------------*/
+/* 容器样式 */
+.match-info-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 正反方队伍信息布局 */
+.team-topics-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* 队伍信息区域样式 */
+.team-info {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-info p {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 特定样式：正方和反方 */
+.affirmative {
+    border: 2px solid #007bff;
+}
+
+.negative {
+    border: 2px solid #dc3545;
+}
+/*--------------------------------------------------------------------*/
+
+#cover-page, #info-page, #timer-page {
+    max-width: 800px;
+    margin: auto;
+}
+
+#match-info {
+    margin-bottom: 20px;
+}
+
+#team-topics div {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.timer {
+    display: inline-block;
+    margin: 20px;
+}
+
+.timer h3 {
+    margin-bottom: 10px;
+}
+
+#controls button {
+    margin: 10px;
+}

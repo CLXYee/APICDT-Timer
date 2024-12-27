@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚太辩计时器</title>
+    <link rel="stylesheet" href="apicdtmain.css">
+</head>
+<body>
+    <!-- 环节零：Cover Page -->
+    <div id="cover-page">
+        <h1>亚太辩计时器</h1>
+        <input type="text" id="title" placeholder="请输入比赛标题">
+        <button id="proceed-to-info">下一步</button>
+    </div>
+
+    <!-- 输入队伍名称和辩题 -->
+    <div id="info-page" style="display: none;" class="info-page-container">
+        <h1 class="info-title">输入队伍名称和辩题</h1>
+        <div class="team-info">
+            <div class="team-section">
+                <h2>正方</h2>
+                <label for="affirmative-team">队名：</label>
+                <input type="text" id="affirmative-team" placeholder="请输入正方队名">
+                <label for="affirmative-topic">辩题：</label>
+                <input type="text" id="affirmative-topic" placeholder="请输入正方辩题">
+            </div>
+            <div class="team-section">
+                <h2>反方</h2>
+                <label for="negative-team">队名：</label>
+                <input type="text" id="negative-team" placeholder="请输入反方队名">
+                <label for="negative-topic">辩题：</label>
+                <input type="text" id="negative-topic" placeholder="请输入反方辩题">
+            </div>
+        </div>
+        <button id="start-match" class="start-button">开始比赛</button>
+    </div>
+
+    <!-- 计时器页面 -->
+    <div id="timer-page" style="display: none;">
+        <div id="match-info" class="match-info-container">
+            <h2 id="match-title"></h2>
+            <div id="team-topics">
+                <div class="team-info affirmative">
+                    <strong id="affirmative-name"></strong>: <span id="affirmative-debate"></span>
+                </div>
+                <div class="team-info negative">
+                    <strong id="negative-name"></strong>: <span id="negative-debate"></span>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <h2 id="phase-title">环节零</h2>
+        <div id="timers">
+            <div class="timer" id="affirmative-timer">
+                <h3>正方计时</h3>
+                <p id="affirmative-time">03:30</p>
+                <button onclick="startTimer('affirmative')">开始</button>
+                <button onclick="stopTimer('affirmative')">停止</button>
+                <button onclick="resetTimer('affirmative')">重置</button>
+            </div>
+            <div class="timer" id="negative-timer">
+                <h3>反方计时</h3>
+                <p id="negative-time">03:30</p>
+                <button onclick="startTimer('negative')">开始</button>
+                <button onclick="stopTimer('negative')">停止</button>
+                <button onclick="resetTimer('negative')">重置</button>
+            </div>
+        </div>
+
+        <div id="controls">
+            <button onclick="prevPhase()">上一环节</button>
+            <button onclick="nextPhase()">下一环节</button>
+            <button onclick="playSound()">播放提示音</button>
+        </div>
+    </div>
+
+    <audio id="bell-sound" src="bell.mp3"></audio>
+    <script src="apicdtmain.js"></script>
+</body>
+</html>
