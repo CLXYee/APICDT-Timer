@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚太辩计时器</title>
+    <link rel="stylesheet" href="apicdtmain1.css">
+</head>
+<body>
+    <!-- 环节零：Cover Page -->
+    <div id="cover-page">
+        <h1>第十二届亚太大专华语辩论公开赛</h1><h1>计时器</h1>
+        <input type="text" id="title" placeholder="请输入比赛标题"><br><br>
+        <h2>手动输入</h2>
+        <input type="text" id="affirmative-team" placeholder="正方队名">
+        <input type="text" id="affirmative-topic" placeholder="正方辩题">
+        <input type="text" id="negative-team" placeholder="反方队名">
+        <input type="text" id="negative-topic" placeholder="反方辩题">
+        <button id="proceed-to-info">下一步</button>
+
+        <h2>选择比赛场次</h2>
+        <br>
+        <!--------------------下面是线下赛段的-------------------->
+        <h3>线上小组循环赛</h3>
+        <br>
+        <!--A1循环赛-->
+        <button class="template-button" data-title="A1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 A1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 A1 反方辩题">A1 循环赛</button>
+        <!--A2循环赛-->
+        <button class="template-button" data-title="A2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 A2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 A2 反方辩题">A2 循环赛</button>
+        <!--A3循环赛-->
+        <button class="template-button" data-title="A3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 A3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 A3 反方辩题">A3 循环赛</button>
+        
+        <!--B1循环赛-->
+        <button class="template-button" data-title="B1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 B1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 B1 反方辩题">B1 循环赛</button>
+        <!--B2循环赛-->
+        <button class="template-button" data-title="B2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 B2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 B2 反方辩题">B2 循环赛</button>
+        <!--B3循环赛-->
+        <button class="template-button" data-title="B3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 B3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 B3 反方辩题">B3 循环赛</button>
+
+        <!--C1循环赛-->
+        <button class="template-button" data-title="C1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 C1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 C1 反方辩题">C1 循环赛</button>
+        <!--C2循环赛-->
+        <button class="template-button" data-title="C2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 C2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 C2 反方辩题">C2 循环赛</button>
+        <!--C3循环赛-->
+        <button class="template-button" data-title="C3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 C3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 C3 反方辩题">C3 循环赛</button>
+        
+        <!--D1循环赛-->
+        <button class="template-button" data-title="D1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 D1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 D1 反方辩题">D1 循环赛</button>
+        <!--D2循环赛-->
+        <button class="template-button" data-title="D2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 D2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 D2 反方辩题">D2 循环赛</button>
+        <!--D3循环赛-->
+        <button class="template-button" data-title="D3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 D3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 D3 反方辩题">D3 循环赛</button>
+
+        <!--E1循环赛-->
+        <button class="template-button" data-title="E1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 E1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 E1 反方辩题">E1 循环赛</button>
+        <!--E2循环赛-->
+        <button class="template-button" data-title="E2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 E2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 E2 反方辩题">E2 循环赛</button>
+        <!--E3循环赛-->
+        <button class="template-button" data-title="E3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 E3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 E3 反方辩题">E3 循环赛</button>
+        
+        <!--F1循环赛-->
+        <button class="template-button" data-title="F1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 F1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 F1 反方辩题">F1 循环赛</button>
+        <!--F2循环赛-->
+        <button class="template-button" data-title="F2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 F2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 F2 反方辩题">F2 循环赛</button>
+        <!--F3循环赛-->
+        <button class="template-button" data-title="F3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 F3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 F3 反方辩题">F3 循环赛</button>
+
+        <!--G1循环赛-->
+        <button class="template-button" data-title="G1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 G1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 G1 反方辩题">G1 循环赛</button>
+        <!--G2循环赛-->
+        <button class="template-button" data-title="G2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 G2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 G2 反方辩题">G2 循环赛</button>
+        <!--G3循环赛-->
+        <button class="template-button" data-title="G3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 G3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 G3 反方辩题">G3 循环赛</button>
+        
+        <!--H1循环赛-->
+        <button class="template-button" data-title="H1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 H1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 H1 反方辩题">H1 循环赛</button>
+        <!--H2循环赛-->
+        <button class="template-button" data-title="H2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 H2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 H2 反方辩题">H2 循环赛</button>
+        <!--H3循环赛-->
+        <button class="template-button" data-title="H3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 H3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 H3 反方辩题">H3 循环赛</button>
+
+        <!--I1循环赛-->
+        <button class="template-button" data-title="I1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 I1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 I1 反方辩题">I1 循环赛</button>
+        <!--I2循环赛-->
+        <button class="template-button" data-title="I2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 I2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 I2 反方辩题">I2 循环赛</button>
+        <!--I3循环赛-->
+        <button class="template-button" data-title="I3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 I3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 I3 反方辩题">I3 循环赛</button>
+        
+        <!--J1循环赛-->
+        <button class="template-button" data-title="J1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 J1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 J1 反方辩题">J1 循环赛</button>
+        <!--J2循环赛-->
+        <button class="template-button" data-title="J2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 J2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 J2 反方辩题">J2 循环赛</button>
+        <!--J3循环赛-->
+        <button class="template-button" data-title="J3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 J3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 J3 反方辩题">J3 循环赛</button>
+
+        <!--K1循环赛-->
+        <button class="template-button" data-title="K1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 K1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 K1 反方辩题">K1 循环赛</button>
+        <!--K2循环赛-->
+        <button class="template-button" data-title="K2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 K2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 K2 反方辩题">K2 循环赛</button>
+        <!--K3循环赛-->
+        <button class="template-button" data-title="K3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 K3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 K3 反方辩题">K3 循环赛</button>
+        
+        <!--L1循环赛-->
+        <button class="template-button" data-title="L1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 L1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 L1 反方辩题">L1 循环赛</button>
+        <!--L2循环赛-->
+        <button class="template-button" data-title="L2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 L2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 L2 反方辩题">L2 循环赛</button>
+        <!--L3循环赛-->
+        <button class="template-button" data-title="L3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 L3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 L3 反方辩题">L3 循环赛</button>
+
+        <!--------------------下面是线下赛段循环赛-------------------->
+        <br><br>
+        <h3>线下小组循环赛</h3>
+        <br>
+        <!--M1循环赛-->
+        <button class="template-button" data-title="M1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 M1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 M1 反方辩题">M1 循环赛</button>
+        <!--M2循环赛-->
+        <button class="template-button" data-title="M2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 M2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 M2 反方辩题">M2 循环赛</button>
+        <!--M3循环赛-->
+        <button class="template-button" data-title="M3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 M3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 M3 反方辩题">M3 循环赛</button>
+        
+        <!--N1循环赛-->
+        <button class="template-button" data-title="N1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 N1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 N1 反方辩题">N1 循环赛</button>
+        <!--N2循环赛-->
+        <button class="template-button" data-title="N2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 N2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 N2 反方辩题">N2 循环赛</button>
+        <!--N3循环赛-->
+        <button class="template-button" data-title="N3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 N3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 N3 反方辩题">N3 循环赛</button>
+
+        <!--O1循环赛-->
+        <button class="template-button" data-title="O1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 O1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 O1 反方辩题">O1 循环赛</button>
+        <!--O2循环赛-->
+        <button class="template-button" data-title="O2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 O2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 O2 反方辩题">O2 循环赛</button>
+        <!--O3循环赛-->
+        <button class="template-button" data-title="O3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 O3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 O3 反方辩题">O3 循环赛</button>
+        
+        <!--P1循环赛-->
+        <button class="template-button" data-title="P1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 P1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 P1 反方辩题">P1 循环赛</button>
+        <!--P2循环赛-->
+        <button class="template-button" data-title="P2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 P2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 P2 反方辩题">P2 循环赛</button>
+        <!--P3循环赛-->
+        <button class="template-button" data-title="P3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 P3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 P3 反方辩题">P3 循环赛</button>
+
+        <!--------------------下面是八强赛-------------------->
+        <br><br>
+        <h3>八强赛</h3>
+        <br>
+        <!--Q1八强赛-->
+        <button class="template-button" data-title="Q1 八强赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 Q1 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 Q1 反方辩题">Q1 八强赛</button>
+        
+        <!--Q2八强赛-->
+        <button class="template-button" data-title="Q2 八强赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 Q2 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 Q2 反方辩题">Q2 八强赛</button>
+
+        <!--Q3八强赛-->
+        <button class="template-button" data-title="Q3 八强赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 Q3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 Q3 反方辩题">Q3 八强赛</button>
+
+        <!--Q4八强赛-->
+        <button class="template-button" data-title="Q4 八强赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 Q4 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 Q4 反方辩题">Q4 八强赛</button>
+
+        <!--------------------下面是半决赛-------------------->
+        <br><br>
+        <h3>半决赛</h3>
+        <br>
+        <!--半决赛1-->
+        <button class="template-button" data-title="半决赛1" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 半决赛1 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 半决赛1 反方辩题">半决赛1</button>
+        
+        <!--半决赛2-->
+        <button class="template-button" data-title="半决赛2" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 半决赛2 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 半决赛2 反方辩题">半决赛2</button>
+
+        <!--------------------下面是总决赛-------------------->
+        <br><br>
+        <h3>总决赛</h3>
+        <br>
+        <!--总决赛-->
+        <button class="template-button" data-title="总决赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 总决赛 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 总决赛 反方辩题">总决赛</button>
+    </div>
+
+
+    <!-- 输入队伍名称和辩题 -->
+    <div id="info-page" style="display: none;" class="info-page-container">
+        <h1 class="info-title">输入队伍名称和辩题</h1>
+        <div class="team-info">
+            <div class="team-section">
+                <h2>正方</h2>
+                <label for="affirmative-team">队名：</label>
+                <input type="text" id="affirmative-team" placeholder="请输入正方队名">
+                <label for="affirmative-topic">辩题：</label>
+                <input type="text" id="affirmative-topic" placeholder="请输入正方辩题">
+            </div>
+            <div class="team-section">
+                <h2>反方</h2>
+                <label for="negative-team">队名：</label>
+                <input type="text" id="negative-team" placeholder="请输入反方队名">
+                <label for="negative-topic">辩题：</label>
+                <input type="text" id="negative-topic" placeholder="请输入反方辩题">
+            </div>
+        </div>
+        <button id="start-match" class="start-button">开始比赛</button>
+    </div>
+
+    <!-- 计时器页面 -->
+    <div id="timer-page" style="display: none;">
+        <div id="match-info" class="match-info-container">
+            <h2 id="match-title"></h2>
+            <div id="team-topics">
+                <div class="team-info affirmative">
+                    <strong id="affirmative-name"></strong>: <span id="affirmative-debate"></span>
+                </div>
+                <div class="team-info negative">
+                    <strong id="negative-name"></strong>: <span id="negative-debate"></span>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <h2 id="phase-title">环节1：立论</h2>
+        <div id="timers">
+            <div class="timer" id="affirmative-timer">
+                <h3>正方计时</h3>
+                <p id="affirmative-time">03:30</p>
+                <button onclick="startTimer('affirmative')">开始</button>
+                <button onclick="stopTimer('affirmative')">停止</button>
+                <button onclick="resetTimer('affirmative')">重置</button>
+            </div>
+            <div class="timer" id="negative-timer">
+                <h3>反方计时</h3>
+                <p id="negative-time">03:30</p>
+                <button onclick="startTimer('negative')">开始</button>
+                <button onclick="stopTimer('negative')">停止</button>
+                <button onclick="resetTimer('negative')">重置</button>
+            </div>
+        </div>
+
+        <div id="controls">
+            <button onclick="prevPhase()">上一环节</button>
+            <button onclick="nextPhase()">下一环节</button>
+            <button onclick="playSound()">播放提示音</button>
+        </div>
+    </div>
+
+    <audio id="bell-sound" src="bell.mp3"></audio>
+    <script src="apicdtmainNew.js"></script>
+</body>
+</html>
