@@ -3,7 +3,8 @@ body {
     font-family: "Arial", "Kaiti", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F8F0E0;
+    /*background-color: #F8F0E0;*/
+    background-color: #0B204D;
     color: #0B204D;
 }
 
@@ -77,24 +78,46 @@ button#proceed-to-info:hover, button#start-match:hover, #controls button:hover {
 
 /* 比赛信息样式 */
 .match-info-container {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #F8F0E0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#team-topics {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Adjust as needed */
+    margin-top: 10px;
 }
 
 .team-info {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    width: 45%; /* Each team info takes half the space minus spacing */
+    background-color: #F8F0E0; /* Light background color */
+    padding: 10px;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
 }
 
-.team-info p {
-    font-size: 18px;
-    font-weight: bold;
+.affirmative {
     text-align: center;
 }
+
+.negative {
+    text-align: center;
+}
+
+strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+span {
+    font-size: 1em;
+    color: #0B204D;
+}
+
 
 /* 计时器样式 */
 #timers {

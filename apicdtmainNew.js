@@ -7,7 +7,11 @@ const phases = [
     { title: "正方盘问", time: "02:30", single: true },
     { title: "小结", time: "01:30" },
     { title: "自由辩论", time: "04:00" },
-    { title: "总结陈词", time: "03:30" }
+    { title: "总结陈词", time: "03:30" },
+    { title: "缓冲时间", time: "10:00", mono: true},
+    { title: "公布印象票", notime: true},
+    { title: "评审点评", notime: true},
+    { title: "比赛结果", notime: true}
 ];
 let currentPhase = 0;
 
@@ -62,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("cover-page").style.display = "none";
         document.getElementById("timer-page").style.display = "block";
+        setPhase(0);
     }
 });
 
@@ -96,14 +101,25 @@ function setPhase(index) {
         if (index === 4) { // 反方盘问
             document.getElementById("affirmative-timer").style.display = "none";
             document.getElementById("negative-timer").style.display = "inline-block";
+            document.getElementById("general-timer").style.display = "none";
         } else if (index === 5) { // 正方盘问
             document.getElementById("negative-timer").style.display = "none";
             document.getElementById("affirmative-timer").style.display = "inline-block";
+            document.getElementById("general-timer").style.display = "none";
         }
-    } else {
+    } else if (phase.mono){
+        document.getElementById("affirmative-timer").style.display = "none";
+        document.getElementById("negative-timer").style.display = "none";
+        document.getElementById("general-timer").style.display = "inline-block";
+    }else if (phase.notime){
+        document.getElementById("affirmative-timer").style.display = "none";
+        document.getElementById("negative-timer").style.display = "none";
+        document.getElementById("general-timer").style.display = "none";
+    }else {
         // 显示双计时器环节
         document.getElementById("affirmative-timer").style.display = "inline-block";
         document.getElementById("negative-timer").style.display = "inline-block";
+        document.getElementById("general-timer").style.display = "none";
     }
 }
 

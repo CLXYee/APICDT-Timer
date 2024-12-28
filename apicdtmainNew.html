@@ -397,19 +397,23 @@
     <div id="timer-page" style="display: none;">
         <br><h1>第十二届亚太大专华语辩论公开赛</h1><br>
         <div id="match-info" class="match-info-container">
-            <h2 id="match-title"></h2>
+            <h2 id="match-title"></h2><br>
             <div id="team-topics">
                 <div class="team-info affirmative">
-                    <strong id="affirmative-name"></strong>: <span id="affirmative-debate"></span>
+                    <h3>正方</h3><br>
+                    <h1><strong id="affirmative-name"></strong></h1><br>
+                    <h2><span id="affirmative-debate"></span></h2>
                 </div>
                 <div class="team-info negative">
-                    <strong id="negative-name"></strong>: <span id="negative-debate"></span>
+                    <h3>反方</h3><br>
+                    <h1><strong id="negative-name"></strong></h1><br>
+                    <h2><span id="negative-debate"></span></h2>
                 </div>
             </div>
-        </div>
-
+        </div>        
         
 
+        <br>
         <h2 id="phase-title">环节1：立论</h2>
         <div id="timers">
             <div class="timer" id="affirmative-timer">
@@ -425,6 +429,13 @@
                 <button onclick="startTimer('negative')">开始</button>
                 <button onclick="stopTimer('negative')">停止</button>
                 <button onclick="resetTimer('negative')">重置</button>
+            </div>
+            <div class="timer" id="general-timer">
+                <h3>计时</h3>
+                <p id="general-time">10:00</p>
+                <button onclick="startTimer('general')">开始</button>
+                <button onclick="stopTimer('general')">停止</button>
+                <button onclick="resetTimer('general')">重置</button>
             </div>
         </div>
 
