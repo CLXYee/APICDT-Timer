@@ -9,9 +9,9 @@ const phases = [
     { title: "自由辩论", time: "04:00" },
     { title: "总结陈词", time: "03:30" },
     { title: "缓冲时间", time: "10:00", mono: true},
-    { title: "公布印象票", notime: true},
-    { title: "评审点评", notime: true},
-    { title: "比赛结果", notime: true}
+    { title: "公布印象票", time: "0:00"},
+    { title: "评审点评", time: "0:00"},
+    { title: "比赛结果", time: "0:00"}
 ];
 let currentPhase = 0;
 
@@ -114,7 +114,7 @@ function setPhase(index) {
     }else if (phase.notime){
         document.getElementById("affirmative-timer").style.display = "none";
         document.getElementById("negative-timer").style.display = "none";
-        document.getElementById("general-timer").style.display = "none";
+        document.getElementById("general-timer").style.display = "inline-block";
     }else {
         // 显示双计时器环节
         document.getElementById("affirmative-timer").style.display = "inline-block";

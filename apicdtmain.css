@@ -4,13 +4,35 @@ body {
     margin: 0;
     padding: 0;
     /*background-color: #F8F0E0;*/
+    background-image: url('https://entuedu-my.sharepoint.com/:i:/r/personal/c230032_e_ntu_edu_sg/Documents/%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E4%BA%9A%E5%A4%AA%E5%8D%8E%E8%AF%AD%E8%BE%A9%E8%AE%BA%E5%85%AC%E5%BC%80%E8%B5%9B/0%20-%20%E7%AD%B9%E5%A7%94%E5%9B%A2/3-%E5%AE%A3%E4%BC%A0/%E6%9C%AC%E5%B1%8A%E8%B5%84%E6%96%99/06%20%E7%B4%A0%E6%9D%90/%E5%AE%98%E7%BD%91/world%20map%20IV.png?csf=1&web=1&e=vgrYzL'); 
+    background-size: cover;
+     background-repeat: no-repeat;
+    background-position: center;
     background-color: #0B204D;
     color: #0B204D;
 }
 
-h1, h2, h3 {
+.pageTilte {
+    font-family: "Kaiti", sans-serif;
     margin: 0;
     font-weight: bold;
+    text-align: center;
+    color: #0B204D;
+    line-height: 1.1;
+    padding-top: 20px;
+}
+
+h1, h2, h3,h4 {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.custom-textbox { 
+    width: 300px; 
+    height: 40px; 
+    padding: 10px;
+    font-size: 16px; 
     text-align: center;
 }
 
@@ -47,7 +69,7 @@ button#proceed-to-info:hover, button#start-match:hover, #controls button:hover {
 /* 页面容器样式 */
 #cover-page, #info-page, #timer-page {
     max-width: 900px;
-    margin: 50px auto;
+    margin: 60px auto;
     padding: 30px;
     background-color: #ffffff;
     border-radius: 10px;
