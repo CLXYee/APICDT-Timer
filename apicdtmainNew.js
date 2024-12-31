@@ -1,13 +1,19 @@
 const phases = [
-    { title: "立论", time: "03:30" },
-    { title: "质询", time: "02:00" },
-    { title: "驳论", time: "03:00" },
-    { title: "申论", time: "03:00" },
-    { title: "反方盘问", time: "02:30", single: true },
-    { title: "正方盘问", time: "02:30", single: true },
-    { title: "小结", time: "01:30" },
+    { title: "正方一辩立论", time: "03:30", mono: true },
+    { title: "反方一辩立论", time: "03:30", mono: true },
+    { title: "反方三辩质询正方一辩", time: "02:00", mono: true },
+    { title: "正方三辩质询反方一辩", time: "02:00", mono: true },
+    { title: "正方二辩驳论", time: "03:00", mono: true },
+    { title: "反方二辩驳论", time: "03:00", mono: true },
+    { title: "正方三辩申论", time: "03:00", mono: true },
+    { title: "反方三辩申论", time: "03:00", mono: true },
+    { title: "反方二辩盘问", time: "02:30", mono: true },
+    { title: "正方二辩盘问", time: "02:30", mono: true },
+    { title: "正方四辩小结", time: "01:30", mono: true },
+    { title: "反方四辩小结", time: "01:30", mono: true },
     { title: "自由辩论", time: "04:00" },
-    { title: "总结陈词", time: "03:30" },
+    { title: "反方四辩总结陈词", time: "03:30", mono: true },
+    { title: "正方四辩总结陈词", time: "03:30", mono: true },
     { title: "缓冲时间", time: "10:00", mono: true},
     { title: "公布印象票", time: "0:00"},
     { title: "评审点评", time: "0:00"},
@@ -94,6 +100,7 @@ document.getElementById("start-match").addEventListener("click", () => {
 function setPhase(index) {
     const phase = phases[index];
     document.getElementById("phase-title").textContent = `环节${index + 1}：${phase.title}`;
+    document.getElementById("general-time").textContent = phase.time;
     document.getElementById("affirmative-time").textContent = phase.time;
     document.getElementById("negative-time").textContent = phase.time;
 
