@@ -140,6 +140,10 @@ span {
     color: #0B204D;
 }
 
+#phase-title-notime{
+    font-size: 50pt;
+}
+
 
 /* 计时器样式 */
 #timers {
@@ -179,6 +183,14 @@ span {
 .timer button:hover {
     background-color: #FFCB5A;
     color: #0B204D;
+}
+
+#negative-time , #affirmative-time {
+    font-size: 40pt;
+}
+
+#general-time {
+    font-size: 40pt;
 }
 
 /* 控制按钮 */

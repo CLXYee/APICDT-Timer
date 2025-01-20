@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚太辩计时器</title>
+    <link rel="stylesheet" href="apicdtmain.css">
+</head>
+<body>
+    <!-- 计时器页面 -->
+    <div id="timer-page" style="display: none;">
+        <br><h1>第十二届亚太大专华语辩论公开赛</h1><br>
+        <div id="match-info" class="match-info-container">
+            <h2 id="match-title"></h2><br>
+            <div id="team-topics">
+                <div class="team-info affirmative">
+                    <h3>正方</h3><br>
+                    <h1><strong id="affirmative-name"></strong></h1><br>
+                    <h2><span id="affirmative-debate"></span></h2>
+                </div>
+                <div class="team-info negative">
+                    <h3>反方</h3><br>
+                    <h1><strong id="negative-name"></strong></h1><br>
+                    <h2><span id="negative-debate"></span></h2>
+                </div>
+            </div>
+        </div>        
+        
+
+        <br>
+        <h2 id="phase-title">环节1：立论</h2>
+        <h6>this is notimer</h6>
+        
+
+        <div id="controls">
+            <button onclick="prevPhase()">上一环节</button>
+            <button onclick="nextPhase()">下一环节</button>
+            <button onclick="playSound()">播放提示音</button>
+        </div>
+    </div>
+
+    <audio id="bell-sound" src="bell.wav"></audio>
+    <audio id="bell-sound2" src="endBell.wav"></audio>
+    <script src="apicdtmainNew.js"></script>
+</body>
+</html>

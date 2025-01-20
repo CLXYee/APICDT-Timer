@@ -14,10 +14,10 @@ const phases = [
     { title: "自由辩论", time: "04:00" },
     { title: "反方四辩总结陈词", time: "03:30", mono: true },
     { title: "正方四辩总结陈词", time: "03:30", mono: true },
-    { title: "缓冲时间", time: "10:00", mono: true},
-    { title: "公布印象票", time: "0:00"},
-    { title: "评审点评", time: "0:00"},
-    { title: "比赛结果", time: "0:00"}
+    { title: "缓冲时间", time: "10:00", mono: true },
+    { title: "公布印象票", time: "0:00", notime: true },
+    { title: "评审点评", time: "10:00", mono: true },
+    { title: "比赛结果", time: "0:00", notime: true}
 ];
 let currentPhase = 0;
 
@@ -100,6 +100,7 @@ document.getElementById("start-match").addEventListener("click", () => {
 function setPhase(index) {
     const phase = phases[index];
     document.getElementById("phase-title").textContent = `环节${index + 1}：${phase.title}`;
+    document.getElementById("phase-title-notime").innerHTML = `<br>${phase.title}<br><br>`;
     document.getElementById("general-time").textContent = phase.time;
     document.getElementById("affirmative-time").textContent = phase.time;
     document.getElementById("negative-time").textContent = phase.time;
@@ -109,24 +110,34 @@ function setPhase(index) {
             document.getElementById("affirmative-timer").style.display = "none";
             document.getElementById("negative-timer").style.display = "inline-block";
             document.getElementById("general-timer").style.display = "none";
+            document.getElementById("phase-title").style.display = "inline-block";
+            document.getElementById("phase-title-notime").style.display = "none";
         } else if (index === 5) { // 正方盘问
             document.getElementById("negative-timer").style.display = "none";
             document.getElementById("affirmative-timer").style.display = "inline-block";
             document.getElementById("general-timer").style.display = "none";
+            document.getElementById("phase-title").style.display = "inline-block";
+            document.getElementById("phase-title-notime").style.display = "none";
         }
     } else if (phase.mono){
         document.getElementById("affirmative-timer").style.display = "none";
         document.getElementById("negative-timer").style.display = "none";
         document.getElementById("general-timer").style.display = "inline-block";
+        document.getElementById("phase-title").style.display = "inline-block";
+        document.getElementById("phase-title-notime").style.display = "none";
     }else if (phase.notime){
         document.getElementById("affirmative-timer").style.display = "none";
         document.getElementById("negative-timer").style.display = "none";
-        document.getElementById("general-timer").style.display = "inline-block";
+        document.getElementById("general-timer").style.display = "none";
+        document.getElementById("phase-title").style.display = "none";
+        document.getElementById("phase-title-notime").style.display = "inline-block";
     }else {
         // 显示双计时器环节
         document.getElementById("affirmative-timer").style.display = "inline-block";
         document.getElementById("negative-timer").style.display = "inline-block";
         document.getElementById("general-timer").style.display = "none";
+        document.getElementById("phase-title").style.display = "inline-block";
+        document.getElementById("phase-title-notime").style.display = "none";
     }
 }
 
@@ -145,15 +156,30 @@ function nextPhase() {
 }
 
 function startTimer(side) {
-    if (timers[side]) return;
+    if (timers[side]) return; // Timer is already running
+
+    // Stop the other timer in "自由辩论"
+    if (phases[currentPhase].title === "自由辩论") {
+        const otherSide = side === "affirmative" ? "negative" : "affirmative";
+        stopTimer(otherSide);
+    }
+
     const timeText = document.getElementById(`${side}-time`);
     let [minutes, seconds] = timeText.textContent.split(":").map(Number);
     timers.remaining[side] = minutes * 60 + seconds;
 
     timers[side] = setInterval(() => {
-        if (timers.remaining[side] <= 0) {
-            stopTimer(side);
+        const currentPhaseTitle = phases[currentPhase].title;
+
+        if (timers.remaining[side] === 31 && currentPhaseTitle !== "评审点评" && currentPhaseTitle !== "缓冲时间") {
             playSound();
+        }
+
+        if (timers.remaining[side] <= 1 && currentPhaseTitle !== "评审点评" && currentPhaseTitle !== "缓冲时间") {
+            stopTimer(side);
+            playSound2();
+        } else if (timers.remaining[side] <= 0 && (currentPhaseTitle === "评审点评" || currentPhaseTitle === "缓冲时间")) {
+            stopTimer(side);
         } else {
             timers.remaining[side]--;
             const mins = String(Math.floor(timers.remaining[side] / 60)).padStart(2, "0");
@@ -164,9 +190,12 @@ function startTimer(side) {
 }
 
 function stopTimer(side) {
-    clearInterval(timers[side]);
-    timers[side] = null;
+    if (timers[side]) {
+        clearInterval(timers[side]);
+        timers[side] = null;
+    }
 }
+
 
 function resetTimer(side) {
     stopTimer(side);
@@ -178,3 +207,9 @@ function playSound() {
     const sound = document.getElementById("bell-sound");
     sound.play();
 }
+
+function playSound2() {
+    const sound = document.getElementById("bell-sound2");
+    sound.play();
+}
+
