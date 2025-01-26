@@ -1,4 +1,6 @@
 const phases = [
+    { title: "队伍介绍", notime: true },
+    { title: "评审介绍", notime: true },
     { title: "正方一辩立论", time: "03:30", mono: true },
     { title: "反方一辩立论", time: "03:30", mono: true },
     { title: "反方三辩质询正方一辩", time: "02:00", mono: true },
@@ -99,7 +101,7 @@ document.getElementById("start-match").addEventListener("click", () => {
 
 function setPhase(index) {
     const phase = phases[index];
-    document.getElementById("phase-title").textContent = `环节${index + 1}：${phase.title}`;
+    document.getElementById("phase-title").textContent = `环节${index - 1}：${phase.title}`;
     document.getElementById("phase-title-notime").innerHTML = `<br>${phase.title}<br><br>`;
     document.getElementById("general-time").textContent = phase.time;
     document.getElementById("affirmative-time").textContent = phase.time;
@@ -175,7 +177,7 @@ function startTimer(side) {
             playSound();
         }
 
-        if (timers.remaining[side] <= 1 && currentPhaseTitle !== "评审点评" && currentPhaseTitle !== "缓冲时间") {
+        if (timers.remaining[side] <= 0 && currentPhaseTitle !== "评审点评" && currentPhaseTitle !== "缓冲时间") {
             stopTimer(side);
             playSound2();
         } else if (timers.remaining[side] <= 0 && (currentPhaseTitle === "评审点评" || currentPhaseTitle === "缓冲时间")) {
@@ -212,4 +214,3 @@ function playSound2() {
     const sound = document.getElementById("bell-sound2");
     sound.play();
 }
-
