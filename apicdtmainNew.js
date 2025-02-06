@@ -22,6 +22,7 @@ const phases = [
     { title: "比赛结果", time: "0:00", notime: true}
 ];
 let currentPhase = 0;
+let soundFlag = 0;
 
 const timers = {
     affirmative: null,
@@ -208,9 +209,11 @@ function resetTimer(side) {
 function playSound() {
     const sound = document.getElementById("bell-sound");
     sound.play();
+    soundFlag++;
 }
 
 function playSound2() {
     const sound = document.getElementById("bell-sound2");
     sound.play();
+    soundFlag++;
 }

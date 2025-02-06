@@ -26,13 +26,13 @@
         <br>
         <!--A1循环赛-->
         <button class="template-button" data-title="A1 循环赛" 
-            data-affirmative-team="香港科技大学" 
+            data-affirmative-team="芝加哥大学" 
             data-affirmative-topic="公众舆论轻视大众的苦难更容易导致社会不公" 
-            data-negative-team="芝加哥大学" 
+            data-negative-team="香港科技大学" 
             data-negative-topic="公众舆论夸张大众的苦难更容易导致社会不公">A1 循环赛</button>
         <!--A2循环赛-->
         <button class="template-button" data-title="A2 循环赛" 
-            data-affirmative-team="芝加哥大学" 
+            data-affirmative-team="香港科技大学" 
             data-affirmative-topic="公众舆论轻视大众的苦难更容易导致社会不公" 
             data-negative-team="华中师范大学" 
             data-negative-topic="公众舆论夸张大众的苦难更容易导致社会不公">A2 循环赛</button>
@@ -40,7 +40,7 @@
         <button class="template-button" data-title="A3 循环赛" 
             data-affirmative-team="华中师范大学" 
             data-affirmative-topic="公众舆论轻视大众的苦难更容易导致社会不公" 
-            data-negative-team="香港科技大学" 
+            data-negative-team="芝加哥大学" 
             data-negative-topic="公众舆论夸张大众的苦难更容易导致社会不公">A3 循环赛</button>
         
         <!--B1循环赛-->
@@ -444,7 +444,7 @@
         <div id="controls">
             <button onclick="prevPhase()">上一环节</button>
             <button onclick="nextPhase()">下一环节</button>
-            <button onclick="playSound()">播放提示音</button>
+            <button onclick="soundFlag === 1 ? playSound2() : playSound()">播放提示音</button>
         </div>
     </div>
 
