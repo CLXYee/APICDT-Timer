@@ -19,7 +19,9 @@ const phases = [
     { title: "缓冲时间", time: "10:00", mono: true },
     { title: "公布印象票", time: "0:00", notime: true },
     { title: "评审点评", time: "10:00", mono: true },
-    { title: "比赛结果", time: "0:00", notime: true}
+    { title: "比赛结果", time: "0:00", notime: true},
+    { title: "双边-掉线缓冲", time: "01:30", mono: true },
+    { title: "单边-掉线缓冲", time: "02:00", mono: true }
 ];
 let currentPhase = 0;
 let soundFlag = 0;
@@ -102,7 +104,7 @@ document.getElementById("start-match").addEventListener("click", () => {
 
 function setPhase(index) {
     const phase = phases[index];
-    document.getElementById("phase-title").textContent = `环节${index - 1}：${phase.title}`;
+    document.getElementById("phase-title").textContent = `${phase.title}`;
     document.getElementById("phase-title-notime").innerHTML = `<br>${phase.title}<br><br>`;
     document.getElementById("general-time").textContent = phase.time;
     document.getElementById("affirmative-time").textContent = phase.time;
