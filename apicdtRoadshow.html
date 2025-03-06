@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚太辩计时器</title>
+    <link rel="stylesheet" href="apicdtmain.css">
+</head>
+<body>
+    <!-- 环节零：Cover Page -->
+    <div id="cover-page">
+        <h1><p class="pageTitle">第十二届 亚太大专华语辩论公开赛</p></h1><h1>大赛计时器</h1><br>
+        <input type="text" class="custom-textbox" id="title" placeholder="请输入比赛标题"><br><br><br>
+        <h2>手动输入</h2>
+        <input type="text" id="affirmative-team" placeholder="正方队名">
+        <input type="text" id="affirmative-topic" placeholder="正方辩题">
+        <input type="text" id="negative-team" placeholder="反方队名">
+        <input type="text" id="negative-topic" placeholder="反方辩题">
+        <button id="proceed-to-info">下一步</button>
+
+        <hr class="spacing">
+        <h2>选择比赛场次</h2>
+        <br>
+        <h3>线上小组循环赛</h3>
+        <br>
+        <!--A1循环赛-->
+        <button class="template-button" data-title="南大华语辩论队表演赛" 
+            data-affirmative-team="正方" 
+            data-affirmative-topic="当代年轻人在职业选择中，应当优先考虑个人兴趣" 
+            data-negative-team="反方" 
+            data-negative-topic="当代年轻人在职业选择中，应当优先考虑发展前景">南大华语辩论队表演赛</button>
+        <!--------------------下面是线下赛段的-------------------->
+        <h3>线上小组循环赛</h3>
+        <br>
+        <!--A1循环赛-->
+        <button class="template-button" data-title="A1 循环赛" 
+            data-affirmative-team="芝加哥大学" 
+            data-affirmative-topic="公众舆论轻视大众的苦难更容易导致社会不公" 
+            data-negative-team="香港科技大学" 
+            data-negative-topic="公众舆论夸张大众的苦难更容易导致社会不公">A1 循环赛</button>
+        <!--A2循环赛-->
+        <button class="template-button" data-title="A2 循环赛" 
+            data-affirmative-team="香港科技大学" 
+            data-affirmative-topic="公众舆论轻视大众的苦难更容易导致社会不公" 
+            data-negative-team="华中师范大学" 
+            data-negative-topic="公众舆论夸张大众的苦难更容易导致社会不公">A2 循环赛</button>
+        <!--A3循环赛-->
+        <button class="template-button" data-title="A3 循环赛" 
+            data-affirmative-team="华中师范大学" 
+            data-affirmative-topic="公众舆论轻视大众的苦难更容易导致社会不公" 
+            data-negative-team="芝加哥大学" 
+            data-negative-topic="公众舆论夸张大众的苦难更容易导致社会不公">A3 循环赛</button>
+        
+        <!--B1循环赛-->
+        <button class="template-button" data-title="B1 循环赛" 
+            data-affirmative-team="香港大学" 
+            data-affirmative-topic="人工智能风险防范的主要责任更应该落在公权手上" 
+            data-negative-team="双溪龙拉曼大学" 
+            data-negative-topic="人工智能风险防范的主要责任更应该落在市场手上">B1 循环赛</button>
+        <!--B2循环赛-->
+        <button class="template-button" data-title="B2 循环赛" 
+            data-affirmative-team="双溪龙拉曼大学" 
+            data-affirmative-topic="人工智能风险防范的主要责任更应该落在公权手上" 
+            data-negative-team="哈尔滨工业大学（深圳）" 
+            data-negative-topic="人工智能风险防范的主要责任更应该落在市场手上">B2 循环赛</button>
+        <!--B3循环赛-->
+        <button class="template-button" data-title="B3 循环赛" 
+            data-affirmative-team="哈尔滨工业大学（深圳）" 
+            data-affirmative-topic="人工智能风险防范的主要责任更应该落在公权手上" 
+            data-negative-team="香港大学" 
+            data-negative-topic="人工智能风险防范的主要责任更应该落在市场手上">B3 循环赛</button>
+
+        <!--C1循环赛-->
+        <button class="template-button" data-title="C1 循环赛" 
+            data-affirmative-team="上海大学" 
+            data-affirmative-topic="对于反腐运动，娱乐化反腐宣传利大于弊" 
+            data-negative-team="國立中山大學" 
+            data-negative-topic="对于反腐运动，娱乐化反腐宣传弊大于利">C1 循环赛</button>
+        <!--C2循环赛-->
+        <button class="template-button" data-title="C2 循环赛" 
+            data-affirmative-team="國立中山大學" 
+            data-affirmative-topic="对于反腐运动，娱乐化反腐宣传利大于弊" 
+            data-negative-team="北京理工大学" 
+            data-negative-topic="对于反腐运动，娱乐化反腐宣传弊大于利">C2 循环赛</button>
+        <!--C3循环赛-->
+        <button class="template-button" data-title="C3 循环赛" 
+            data-affirmative-team="北京理工大学" 
+            data-affirmative-topic="对于反腐运动，娱乐化反腐宣传利大于弊" 
+            data-negative-team="上海大学" 
+            data-negative-topic="对于反腐运动，娱乐化反腐宣传弊大于利">C3 循环赛</button>
+        
+        <!--D1循环赛-->
+        <button class="template-button" data-title="D1 循环赛" 
+            data-affirmative-team="澳门城市大学" 
+            data-affirmative-topic="新闻自由是社会改革的主要助力" 
+            data-negative-team="南洋理工大学" 
+            data-negative-topic="新闻自由不是社会改革的主要助力">D1 循环赛</button>
+        <!--D2循环赛-->
+        <button class="template-button" data-title="D2 循环赛" 
+            data-affirmative-team="南洋理工大学" 
+            data-affirmative-topic="新闻自由是社会改革的主要助力" 
+            data-negative-team="浙江大学" 
+            data-negative-topic="新闻自由不是社会改革的主要助力">D2 循环赛</button>
+        <!--D3循环赛-->
+        <button class="template-button" data-title="D3 循环赛" 
+            data-affirmative-team="浙江大学" 
+            data-affirmative-topic="新闻自由是社会改革的主要助力" 
+            data-negative-team="澳门城市大学" 
+            data-negative-topic="新闻自由不是社会改革的主要助力">D3 循环赛</button>
+
+        <!--E1循环赛-->
+        <button class="template-button" data-title="E1 循环赛" 
+            data-affirmative-team="澳门大学" 
+            data-affirmative-topic="反诈作品有助诈骗基地所在国推动诈骗管制" 
+            data-negative-team="马来西亚博特拉大学" 
+            data-negative-topic="反诈作品无助诈骗基地所在国推动诈骗管制">E1 循环赛</button>
+        <!--E2循环赛-->
+        <button class="template-button" data-title="E2 循环赛" 
+            data-affirmative-team="马来西亚博特拉大学" 
+            data-affirmative-topic="反诈作品有助诈骗基地所在国推动诈骗管制" 
+            data-negative-team="中央民族大学" 
+            data-negative-topic="反诈作品无助诈骗基地所在国推动诈骗管制">E2 循环赛</button>
+        <!--E3循环赛-->
+        <button class="template-button" data-title="E3 循环赛" 
+            data-affirmative-team="中央民族大学" 
+            data-affirmative-topic="反诈作品有助诈骗基地所在国推动诈骗管制" 
+            data-negative-team="澳门大学" 
+            data-negative-topic="反诈作品无助诈骗基地所在国推动诈骗管制">E3 循环赛</button>
+        
+        <!--F1循环赛-->
+        <button class="template-button" data-title="F1 循环赛" 
+            data-affirmative-team="香港浸会大学" 
+            data-affirmative-topic="“快时尚”给生产基地所在国带来的影响利大于弊" 
+            data-negative-team="多伦多大学" 
+            data-negative-topic="“快时尚”给生产基地所在国带来的影响弊大于利">F1 循环赛</button>
+        <!--F2循环赛-->
+        <button class="template-button" data-title="F2 循环赛" 
+            data-affirmative-team="多伦多大学" 
+            data-affirmative-topic="“快时尚”给生产基地所在国带来的影响利大于弊" 
+            data-negative-team="电子科技大学" 
+            data-negative-topic="“快时尚”给生产基地所在国带来的影响弊大于利">F2 循环赛</button>
+        <!--F3循环赛-->
+        <button class="template-button" data-title="F3 循环赛" 
+            data-affirmative-team="电子科技大学" 
+            data-affirmative-topic="“快时尚”给生产基地所在国带来的影响利大于弊" 
+            data-negative-team="香港浸会大学" 
+            data-negative-topic="“快时尚”给生产基地所在国带来的影响弊大于利">F3 循环赛</button>
+
+        <!--G1循环赛-->
+        <button class="template-button" data-title="G1 循环赛" 
+            data-affirmative-team="澳门科技大学" 
+            data-affirmative-topic="中学教育“扬长”更为重要" 
+            data-negative-team="华盛顿大学" 
+            data-negative-topic="中学教育“补短”更为重要">G1 循环赛</button>
+        <!--G2循环赛-->
+        <button class="template-button" data-title="G2 循环赛" 
+            data-affirmative-team="华盛顿大学" 
+            data-affirmative-topic="中学教育“扬长”更为重要" 
+            data-negative-team="中国科学技术大学" 
+            data-negative-topic="中学教育“补短”更为重要">G2 循环赛</button>
+        <!--G3循环赛-->
+        <button class="template-button" data-title="G3 循环赛" 
+            data-affirmative-team="中国科学技术大学" 
+            data-affirmative-topic="中学教育“扬长”更为重要" 
+            data-negative-team="澳门科技大学" 
+            data-negative-topic="中学教育“补短”更为重要">G3 循环赛</button>
+        
+        <!--H1循环赛-->
+        <button class="template-button" data-title="H1 循环赛" 
+            data-affirmative-team="爱丁堡大学" 
+            data-affirmative-topic="各国政府应该强制各类企业执行SDG标准" 
+            data-negative-team="马来西亚国立大学" 
+            data-negative-topic="各国政府不应该强制各类企业执行SDG标准">H1 循环赛</button>
+        <!--H2循环赛-->
+        <button class="template-button" data-title="H2 循环赛" 
+            data-affirmative-team="马来西亚国立大学" 
+            data-affirmative-topic="各国政府应该强制各类企业执行SDG标准" 
+            data-negative-team="华东师范大学" 
+            data-negative-topic="各国政府不应该强制各类企业执行SDG标准">H2 循环赛</button>
+        <!--H3循环赛-->
+        <button class="template-button" data-title="H3 循环赛" 
+            data-affirmative-team="华东师范大学" 
+            data-affirmative-topic="各国政府应该强制各类企业执行SDG标准" 
+            data-negative-team="爱丁堡大学" 
+            data-negative-topic="各国政府不应该强制各类企业执行SDG标准">H3 循环赛</button>
+
+        <!--I1循环赛-->
+        <button class="template-button" data-title="I1 循环赛" 
+            data-affirmative-team="武汉大学" 
+            data-affirmative-topic="国际货币基金组织 应该 对加密货币实施全球统一监管" 
+            data-negative-team="剑桥大学" 
+            data-negative-topic="国际货币基金组织 不应该 对加密货币实施全球统一监管">I1 循环赛</button>
+        <!--I2循环赛-->
+        <button class="template-button" data-title="I2 循环赛" 
+            data-affirmative-team="剑桥大学" 
+            data-affirmative-topic="国际货币基金组织 应该 对加密货币实施全球统一监管" 
+            data-negative-team="汕头大学" 
+            data-negative-topic="国际货币基金组织 不应该 对加密货币实施全球统一监管">I2 循环赛</button>
+        <!--I3循环赛-->
+        <button class="template-button" data-title="I3 循环赛" 
+            data-affirmative-team="汕头大学" 
+            data-affirmative-topic="国际货币基金组织 应该 对加密货币实施全球统一监管" 
+            data-negative-team="武汉大学" 
+            data-negative-topic="国际货币基金组织 不应该 对加密货币实施全球统一监管">I3 循环赛</button>
+        
+        <!--J1循环赛-->
+        <button class="template-button" data-title="J1 循环赛" 
+            data-affirmative-team="悉尼大学" 
+            data-affirmative-topic="东盟发挥更大的全球影响力有利于区域成员的发展" 
+            data-negative-team="马来西亚拉曼理工大学" 
+            data-negative-topic="东盟发挥更大的全球影响力不利于区域成员的发展">J1 循环赛</button>
+        <!--J2循环赛-->
+        <button class="template-button" data-title="J2 循环赛" 
+            data-affirmative-team="马来西亚拉曼理工大学" 
+            data-affirmative-topic="东盟发挥更大的全球影响力有利于区域成员的发展" 
+            data-negative-team="北京大学" 
+            data-negative-topic="东盟发挥更大的全球影响力不利于区域成员的发展">J2 循环赛</button>
+        <!--J3循环赛-->
+        <button class="template-button" data-title="J3 循环赛" 
+            data-affirmative-team="北京大学" 
+            data-affirmative-topic="东盟发挥更大的全球影响力有利于区域成员的发展" 
+            data-negative-team="悉尼大学" 
+            data-negative-topic="东盟发挥更大的全球影响力不利于区域成员的发展">J3 循环赛</button>
+
+        <!--K1循环赛-->
+        <button class="template-button" data-title="K1 循环赛" 
+            data-affirmative-team="马来西亚理科大学总院校" 
+            data-affirmative-topic="绝症患者有选择放弃自己生命的权利" 
+            data-negative-team="牛津大学" 
+            data-negative-topic="绝症患者没有选择放弃自己生命的权利">K1 循环赛</button>
+        <!--K2循环赛-->
+        <button class="template-button" data-title="K2 循环赛" 
+            data-affirmative-team="牛津大学" 
+            data-affirmative-topic="绝症患者有选择放弃自己生命的权利" 
+            data-negative-team="四川大学" 
+            data-negative-topic="绝症患者没有选择放弃自己生命的权利">K2 循环赛</button>
+        <!--K3循环赛-->
+        <button class="template-button" data-title="K3 循环赛" 
+            data-affirmative-team="四川大学" 
+            data-affirmative-topic="绝症患者有选择放弃自己生命的权利" 
+            data-negative-team="马来西亚理科大学总院校" 
+            data-negative-topic="绝症患者没有选择放弃自己生命的权利">K3 循环赛</button>
+        
+        <!--L1循环赛-->
+        <button class="template-button" data-title="L1 循环赛" 
+            data-affirmative-team="新南威尔士大学" 
+            data-affirmative-topic="他人评价更帮助让年轻人实现自我" 
+            data-negative-team="新加坡国立大学" 
+            data-negative-topic="自我评价更帮助让年轻人实现自我">L1 循环赛</button>
+        <!--L2循环赛-->
+        <button class="template-button" data-title="L2 循环赛" 
+            data-affirmative-team="新加坡国立大学" 
+            data-affirmative-topic="他人评价更帮助让年轻人实现自我" 
+            data-negative-team="浙江传媒学院" 
+            data-negative-topic="自我评价更帮助让年轻人实现自我">L2 循环赛</button>
+        <!--L3循环赛-->
+        <button class="template-button" data-title="L3 循环赛" 
+            data-affirmative-team="浙江传媒学院" 
+            data-affirmative-topic="他人评价更帮助让年轻人实现自我" 
+            data-negative-team="新南威尔士大学" 
+            data-negative-topic="自我评价更帮助让年轻人实现自我">L3 循环赛</button>
+
+        <!--------------------下面是线下赛段循环赛-------------------->
+        <br><br>
+        <h3>线下小组循环赛</h3>
+        <br>
+        <!--M1循环赛-->
+        <button class="template-button" data-title="M1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 M1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 M1 反方辩题">M1 循环赛</button>
+        <!--M2循环赛-->
+        <button class="template-button" data-title="M2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 M2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 M2 反方辩题">M2 循环赛</button>
+        <!--M3循环赛-->
+        <button class="template-button" data-title="M3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 M3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 M3 反方辩题">M3 循环赛</button>
+        
+        <!--N1循环赛-->
+        <button class="template-button" data-title="N1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 N1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 N1 反方辩题">N1 循环赛</button>
+        <!--N2循环赛-->
+        <button class="template-button" data-title="N2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 N2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 N2 反方辩题">N2 循环赛</button>
+        <!--N3循环赛-->
+        <button class="template-button" data-title="N3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 N3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 N3 反方辩题">N3 循环赛</button>
+
+        <!--O1循环赛-->
+        <button class="template-button" data-title="O1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 O1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 O1 反方辩题">O1 循环赛</button>
+        <!--O2循环赛-->
+        <button class="template-button" data-title="O2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 O2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 O2 反方辩题">O2 循环赛</button>
+        <!--O3循环赛-->
+        <button class="template-button" data-title="O3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 O3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 O3 反方辩题">O3 循环赛</button>
+        
+        <!--P1循环赛-->
+        <button class="template-button" data-title="P1 循环赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 P1 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 P1 反方辩题">P1 循环赛</button>
+        <!--P2循环赛-->
+        <button class="template-button" data-title="P2 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 P2 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 P2 反方辩题">P2 循环赛</button>
+        <!--P3循环赛-->
+        <button class="template-button" data-title="P3 循环赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 P3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 P3 反方辩题">P3 循环赛</button>
+
+        <!--------------------下面是八强赛-------------------->
+        <br><br>
+        <h3>八强赛</h3>
+        <br>
+        <!--Q1八强赛-->
+        <button class="template-button" data-title="Q1 八强赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 Q1 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 Q1 反方辩题">Q1 八强赛</button>
+        
+        <!--Q2八强赛-->
+        <button class="template-button" data-title="Q2 八强赛" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 Q2 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 Q2 反方辩题">Q2 八强赛</button>
+
+        <!--Q3八强赛-->
+        <button class="template-button" data-title="Q3 八强赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 Q3 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 Q3 反方辩题">Q3 八强赛</button>
+
+        <!--Q4八强赛-->
+        <button class="template-button" data-title="Q4 八强赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 Q4 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 Q4 反方辩题">Q4 八强赛</button>
+
+        <!--------------------下面是半决赛-------------------->
+        <br><br>
+        <h3>半决赛</h3>
+        <br>
+        <!--半决赛1-->
+        <button class="template-button" data-title="半决赛1" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 半决赛1 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 半决赛1 反方辩题">半决赛1</button>
+        
+        <!--半决赛2-->
+        <button class="template-button" data-title="半决赛2" 
+            data-affirmative-team="正方队伍 A" 
+            data-affirmative-topic="这是 半决赛2 正方辩题" 
+            data-negative-team="反方队伍 B" 
+            data-negative-topic="这是 半决赛2 反方辩题">半决赛2</button>
+
+        <!--------------------下面是总决赛-------------------->
+        <br><br>
+        <h3>总决赛</h3>
+        <br>
+        <!--总决赛-->
+        <button class="template-button" data-title="总决赛" 
+            data-affirmative-team="正方队伍 X" 
+            data-affirmative-topic="这是 总决赛 正方辩题" 
+            data-negative-team="反方队伍 Y" 
+            data-negative-topic="这是 总决赛 反方辩题">总决赛</button>
+    </div>
+
+    <!-- 计时器页面 -->
+    <div id="timer-page" style="display: none;">
+        <br><h1>第十二届亚太大专华语辩论公开赛</h1><br>
+        <div id="match-info" class="match-info-container">
+            <h2 id="match-title"></h2><br>
+            <div id="team-topics">
+                <div class="team-info affirmative">
+                    <h3></h3><br>
+                    <h2><strong id="affirmative-name"></strong></h2><br>
+                    <h3><span id="affirmative-debate"></span></h3>
+                </div>
+                <div class="team-info negative">
+                    <h3></h3><br>
+                    <h2><strong id="negative-name"></strong></h2><br>
+                    <h3><span id="negative-debate"></span></h3>
+                </div>
+            </div>
+        </div>        
+        
+
+        <br>
+        <h2 id="phase-title">环节1：立论</h2>
+        <h1 id="phase-title-notime"><br><br>环节</h1>
+        <div id="timers">
+            <div class="timer" id="affirmative-timer">
+                <h3>正方计时</h3>
+                <p id="affirmative-time">03:30</p>
+                <button onclick="startTimer('affirmative')">开始</button>
+                <button onclick="stopTimer('affirmative')">停止</button>
+                <button onclick="resetTimer('affirmative')">重置</button>
+            </div>
+            <div class="timer" id="negative-timer">
+                <h3>反方计时</h3>
+                <p id="negative-time">03:30</p>
+                <button onclick="startTimer('negative')">开始</button>
+                <button onclick="stopTimer('negative')">停止</button>
+                <button onclick="resetTimer('negative')">重置</button>
+            </div>
+            <div class="timer" id="general-timer">
+                <h3>计时</h3>
+                <p id="general-time">10:00</p>
+                <button onclick="startTimer('general')">开始</button>
+                <button onclick="stopTimer('general')">停止</button>
+                <button onclick="resetTimer('general')">重置</button>
+            </div>
+        </div>
+
+        <div id="controls">
+            <button onclick="prevPhase()">上一环节</button>
+            <button onclick="nextPhase()">下一环节</button>
+            <button onclick="soundFlag === 1 ? playSound2() : playSound()">播放提示音</button>
+        </div>
+    </div>
+
+    <audio id="bell-sound" src="bell.wav"></audio>
+    <audio id="bell-sound2" src="endBell.wav"></audio>
+    <script src="apicdtRoadshow.js"></script>
+</body>
+</html>
