@@ -24,6 +24,8 @@ const phases = [
 ];
 let currentPhase = 0;
 let soundFlag = 0;
+let affirmativeStore = "05:00";
+let negativeStore = "05:00";
 
 const timers = {
     affirmative: null,
