@@ -1,15 +1,34 @@
 # APICDT-Timer
-Timer requirements: https://docs.google.com/document/d/1Nk9HBAHMEnC1wG9tETOre_b7TInnT1uPrAywV-BzSZc/edit?usp=sharing <br><br>
+Live timer: [APICDT Timer](https://apicdt-timer.vercel.app/)<br>
+Timer requirements: [View timer requirements](https://docs.google.com/document/d/1Nk9HBAHMEnC1wG9tETOre_b7TInnT1uPrAywV-BzSZc/edit?usp=sharing) <br><br>
 
 ### About this timer
-- 此计时器所有环节完全按照亚太赛赛制及章程制作
-- 若需要更改default比赛场次信息，请从 `apicdtmainNew.html` 进行更改
-- 若需要更改赛制，请从 `apicdtmainNew.js` 中的phases添加/删减或调整 `title`、`time`以及其他特别条件
-- 此赛程设置倒计时30秒自动响铃一次、倒计时结束自动响铃两次，并且在“评审点评”及“缓冲时间”倒计时后不响铃。若需要对此做更改，请从 `apicdtmainNew.js` 进行调整
+- All timer stages follow the rules and regulations of the Asia-Pacific Chinese Debate Championship.
+- To change the preset match information, edit `contest-data.js`; enter each match in this order: title, affirmative team, affirmative topic, negative team, and negative topic.
+- Match data is categorized as `Contest` or `Roadshow`; `apicdtmainNew.html` displays `Contest`, while `apicdtRoadshow.html` displays only `Roadshow`.
+- To change the debate format, add, remove, or adjust `title`, `time`, and other special conditions in the `phases` array in `apicdtmainNew.js`.
+- The timer is configured to play one bell when 30 seconds remain and two bells when time expires. No bell is played after the "Judges' Comments" or "Buffer Time" phases. Adjust these settings in `apicdtmainNew.js` if needed.
 
-### Additional
+### Contest data format
+The editable data is stored in [contest-data.js](contest-data.js). A placeholder-only example is available in [example-contest-data.js](example-contest-data.js).
+
+The file must define a top-level `contestData` object with a `sections` array. Each section contains:
+
+- `title`: the heading shown above the preset buttons
+- `category`: use `Contest` for contest mode or `Roadshow` for roadshow mode
+- `matches`: an array of match records
+
+Each match record must contain five values in this order:
+
+```text
+[title, affirmative team, affirmative topic, negative team, negative topic]
+```
+
+The two pages filter by category, so a `Contest` record will not appear in Roadshow Mode and a `Roadshow` record will not appear in Contest Mode.
+
+### Additional (For Local Use)
 To show timer in full screen mode: fn + F11<br>
 To go back to main page: Ctrl + R<br><br>
 
-### 设计颜色参考
-亚太赛主题色：#0B204D, #961B1B, #FFCB5A, #F8F0E0
+### Design Color Reference
+Theme colors: #0B204D, #961B1B, #FFCB5A, #F8F0E0

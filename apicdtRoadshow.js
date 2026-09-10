@@ -35,6 +35,8 @@ const timers = {
 
 document.addEventListener("DOMContentLoaded", () => {
     const proceedButton = document.getElementById("proceed-to-info");
+    const presetsContainer = document.getElementById("roadshow-presets");
+    renderRoadshowPresets(contestData.sections, presetsContainer);
     const templateButtons = document.querySelectorAll(".template-button");
 
     // 手动输入的下一步按钮
@@ -81,6 +83,29 @@ document.addEventListener("DOMContentLoaded", () => {
         setPhase(0);
     }
 });
+
+function renderRoadshowPresets(sections, container) {
+    sections
+        .filter(section => section.category === "Roadshow")
+        .forEach(section => {
+            const heading = document.createElement("h3");
+            heading.textContent = section.title;
+            container.append(heading, document.createElement("br"));
+
+            section.matches.forEach(match => {
+                const [title, affirmativeTeam, affirmativeTopic, negativeTeam, negativeTopic] = match;
+                const button = document.createElement("button");
+                button.className = "template-button";
+                button.textContent = title;
+                button.dataset.title = title;
+                button.dataset.affirmativeTeam = affirmativeTeam;
+                button.dataset.affirmativeTopic = affirmativeTopic;
+                button.dataset.negativeTeam = negativeTeam;
+                button.dataset.negativeTopic = negativeTopic;
+                container.appendChild(button);
+            });
+        });
+}
 
 
 // Info page to timer page
