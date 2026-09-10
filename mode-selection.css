@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0B204D;
+    --red: #961B1B;
+    --gold: #FFCB5A;
+    --cream: #F8F0E0;
+    --white: #FFFFFF;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    font-family: "Arial", "Kaiti", sans-serif;
+    color: var(--navy);
+    background-color: var(--navy);
+    background-image: linear-gradient(135deg, rgba(248, 240, 224, 0.08) 25%, transparent 25%, transparent 50%, rgba(248, 240, 224, 0.08) 50%, rgba(248, 240, 224, 0.08) 75%, transparent 75%);
+    background-size: 34px 34px;
+}
+
+.mode-page {
+    width: min(100%, 760px);
+    padding: clamp(36px, 8vw, 72px) clamp(24px, 7vw, 64px);
+    text-align: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    font-family: "Kaiti", "Arial", sans-serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.1;
+}
+
+.intro {
+    margin: 18px 0 34px;
+    color: rgba(11, 32, 77, 0.72);
+    font-size: 18px;
+}
+
+.mode-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.mode-button {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 24px 18px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: var(--cream);
+    cursor: pointer;
+    font: inherit;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.contest-mode {
+    background-color: var(--red);
+}
+
+.roadshow-mode {
+    background-color: var(--navy);
+}
+
+.mode-label {
+    font-size: clamp(19px, 3vw, 25px);
+    font-weight: bold;
+}
+
+.mode-description {
+    font-size: 15px;
+    opacity: 0.88;
+}
+
+.mode-button:hover,
+.mode-button:focus-visible {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    outline: none;
+    transform: translateY(-3px);
+}
+
+.mode-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 560px) {
+    .mode-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-button {
+        min-height: 120px;
+    }
+}
